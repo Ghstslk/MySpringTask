@@ -12,4 +12,6 @@ public interface UserDAO {
     void deleteUser(int id);
     void updateUser(int id, User user  );
     User getUser(int id);
+    User findUserByUsername(String username);
+    void addRole(User user);
 }

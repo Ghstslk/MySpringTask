@@ -2,12 +2,15 @@ package my.spring.crud.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import my.spring.crud.models.Role;
 import my.spring.crud.models.User;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashSet;
 import java.util.List;
 
-@Component
+@Repository
 @Transactional
 public class UserDaoImpl implements UserDAO {
 
@@ -42,4 +45,19 @@ public class UserDaoImpl implements UserDAO {
     public void addUser(User user) {
        em.persist(user);
     }
+
+    @Override
+    public User findUserByUsername(String username) {
+        return em.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)
+                .setParameter("username", username)
+                .getSingleResult();
+    }
+
+    @Override
+    public void addRole(User user) {
+        Role defaultRole = em.find(Role.class, 1);
+        user.getRoles().add(defaultRole);
+        em.merge(user);
+    }
+
 }
