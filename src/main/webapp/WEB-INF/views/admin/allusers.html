@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>All Users</title>
@@ -23,13 +23,10 @@
         <td th:text="${user.username}"></td>
         <td>
             <a th:href="@{/admin/{id}/edit(id=${user.id})}">Edit</a>
-        <td>
-            <a th:href="@{/admin/{id}/edit(id=${user.id})}">Edit</a>
             <form th:action="@{/admin/{id}(id=${user.id})}" method="post" >
                 <input type="hidden" name="_method" value="delete"/>
                 <button type="submit">Delete</button>
             </form>
-        </td>
         </td>
     </tr>
 </table>
