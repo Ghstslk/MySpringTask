@@ -6,6 +6,7 @@
       <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
     </inspection_tool>
     <inspection_tool class="Deprecation" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlDeprecatedAttribute" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="HttpUrlsUsage" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="JpaQlInspection" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="MarkedForRemoval" enabled="false" level="ERROR" enabled_by_default="false" />
